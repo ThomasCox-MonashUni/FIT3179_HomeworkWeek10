@@ -45,23 +45,21 @@
                 },
                 {"calculate": "datum[country]", "as": "percent"}
             ],
-            "encoding": {
-                "x": {
-                    "field": "Language", 
-                    "type": "nominal", 
-                    "title": "Programming Language"
-                },
-                "y": {
-                    "field": "percent", 
-                    "type": "quantitative", 
-                    "scale": {"domain": [1, 100]},
-                    "title": "% of Users"
-                }
-            },
             "layer": [
                 {
                     "mark": {"type": "bar", "fill": "maroon"},
                     "encoding": {
+                        "x": {
+                            "field": "Language", 
+                            "type": "nominal", 
+                            "title": "Programming Language"
+                        },
+                        "y": {
+                            "field": "percent", 
+                            "type": "quantitative", 
+                            "scale": {"domain": [1, 100]},
+                            "title": "% of Users"
+                        },
                         "tooltip": [
                             {"field": "Language", "type": "nominal", "title": "Programming Language"},
                             {"field": "percent", "type": "quantitative", "title": "% of Users"}
@@ -79,7 +77,7 @@
                         },
                         {"filter": "datum.ranking == 1 && datum.i == 1"},
                         {
-                          "calculate": "datum[country] + '% of Coders;in ' + country + ' use;' + datum.Language",
+                          "calculate": "datum[country] + '% of country\\'s;Coders use;' + datum.Language",
                           "as": "text_annotation_raw"
                         },
                         {
@@ -90,8 +88,8 @@
                       "mark": {
                         "type": "text",
                         "align": "right",
-                        "dx": -15,
-                        "dy": -10,
+                        "dx": -5,
+                        "dy": -100,
                         "baseline": "middle",
                         "fontStyle": "italic"
                       },
